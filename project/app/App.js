@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter, Route } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { Container, Row, Col, Alert, Card, Table } from 'reactstrap';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
-import { AvSelectField } from '@availity/reactstrap-validation-select';
+import AvSelect, { AvSelectField } from '@availity/reactstrap-validation-select';
 import { AvOrganizationSelect, AvProviderSelect } from '@availity/reactstrap-validation-select/resources';
 import { BarChart } from 'react-chartkick';
 import 'chart.js';
@@ -11,16 +11,18 @@ import Spaces from '@availity/spaces';
 import PageHeader from '@availity/page-header';
 import qs from 'query-string';
 import get from 'lodash.get';
-// import { Search, Results } from './areas';
 
 const App = ({ location }) => {
   const [customerId, setCustomerId] = useState(null);
+  const [providerId,setProviderId] = useState(null);
   const spaceId = get(qs.parse(location.search), 'spaceId');
 
   return (
     <Spaces spaceIds={[spaceId]} clientId="test">
       <Container data-testid="app-container" fluid>
-        <PageHeader appName="Provider Scorecard" spaceId={spaceId} feedback />
+        <PageHeader appName="Provider Scorecard" spaceId={spaceId} feedback feedbackProps={{
+          modal: true
+        }}/>
         <AvForm>
           <Row>
             <Col xs={4}>
@@ -56,6 +58,7 @@ const App = ({ location }) => {
                     <span className="text-primary">Step 3 -</span> Choose Group
                   </label>
                 }
+                onChange={({id}) => setProviderId(id)}
                 customerId={customerId}
                 name="provider"
                 type="text"
@@ -63,11 +66,12 @@ const App = ({ location }) => {
               />
             </Col>
           </Row>
+          
+        </AvForm>
+        {providerId && <>
           <Card body>
             <Alert color="primary">You have potentially earned $XX,XXX.XX out of a maximum of</Alert>
           </Card>
-        </AvForm>
-
         <Col sm="9" md={{ size: 6, offset: 5 }}>
           <br />
           <h3> Care Gap Summary </h3>
@@ -76,9 +80,12 @@ const App = ({ location }) => {
         <AvForm>
           <Row>
             <Col xs={1}>
-              <AvField type="select" name="select" label="Gap Type">
-                <option>All</option>
-              </AvField>
+              <AvSelectField name="select" label="Gap Type" options={[
+                {
+                  name:"All",
+                  value:"All"
+                }
+              ]}/>
             </Col>
 
             <Col xs={3}>
@@ -204,6 +211,7 @@ const App = ({ location }) => {
             </Table>
           </Col>
         </Row>
+        </>}
       </Container>
     </Spaces>
   );
