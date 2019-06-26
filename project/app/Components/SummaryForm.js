@@ -5,11 +5,6 @@ import { AvSelectField } from '@availity/reactstrap-validation-select';
 
 export default () => {
   return (
-    <div>
-      <div className="text-center mt-3">
-        <h3> Care Gap Summary </h3>
-      </div>
-
       <AvForm>
         <Row>
           <Col xs={12} sm={6} md={4}>
@@ -56,6 +51,5 @@ export default () => {
           </Col>
         </Row>
       </AvForm>
-    </div>
   );
 };
