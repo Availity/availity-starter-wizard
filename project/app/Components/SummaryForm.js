@@ -3,68 +3,52 @@ import { Row, Col } from 'reactstrap';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
 import { AvSelectField } from '@availity/reactstrap-validation-select';
 
-const SummaryForm = () => {
+export default () => {
   return (
     <div>
-      <Col sm="9" md={{ size: 6, offset: 5 }}>
-        <br />
+      <div className="text-center mt-3">
         <h3> Care Gap Summary </h3>
-      </Col>
+      </div>
 
       <AvForm>
         <Row>
-          <Col xs={1}>
+          <Col xs={12} sm={6} md={4}>
             <AvSelectField
-              name="select"
+              name="gapSelect"
               label="Gap Type"
               options={[
                 {
-                  name: 'All',
+                  label: 'All',
                   value: 'All',
                 },
               ]}
             />
           </Col>
 
-          <Col xs={3}>
-            <AvField name="Gap Description" label="Gap Description">
-              {' '}
-            </AvField>
+          <Col xs={12} sm={6} md={3}>
+            <AvField name="Gap Description" label="Gap Description" />
           </Col>
 
-          <Col xs={4}>
+          <Col xs={12} sm={6} md={3}>
             <AvSelectField
-              name="select"
+              name="providerSelect"
               label="Provider"
               options={[
                 {
-                  name: 'All',
+                  label: 'All',
                   value: 'All',
                 },
               ]}
             />
           </Col>
 
-          <Col xs={2}>
+          <Col xs={12} sm={6} md={2}>
             <AvSelectField
-              name="select"
+              name="metricSelect"
               label="Sort By Metric"
               options={[
                 {
-                  name: 'All',
-                  value: 'All',
-                },
-              ]}
-            />
-          </Col>
-
-          <Col xs={2}>
-            <AvSelectField
-              name="select"
-              label="Sort Order"
-              options={[
-                {
-                  name: 'All',
+                  label: 'All',
                   value: 'All',
                 },
               ]}
@@ -75,5 +59,3 @@ const SummaryForm = () => {
     </div>
   );
 };
-
-export default SummaryForm;

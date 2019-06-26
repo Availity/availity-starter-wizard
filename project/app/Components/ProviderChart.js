@@ -1,15 +1,13 @@
 import React from 'react';
-import { Col, Card } from 'reactstrap';
+import { Col, Card, CardTitle } from 'reactstrap';
 import { BarChart } from 'react-chartkick';
-import 'chart.js';
 
-const ProviderChart = () => {
-  return (
-    <Col xs={4}>
-      <Card body>
-        <h4>Gaps by Provider</h4>
-      </Card>
-
+export default () => (
+  <Col xs={12} lg={4}>
+    <Card body>
+      <CardTitle className="text-center" tag="h4">
+        Gaps by Provider
+      </CardTitle>
       <BarChart
         data={[
           ['Byrd, Katrina (123456789)', 1022],
@@ -18,8 +16,6 @@ const ProviderChart = () => {
           ['Henderson, Monica (123456789)', 500],
         ]}
       />
-    </Col>
-  );
-};
-
-export default ProviderChart;
+    </Card>
+  </Col>
+);
