@@ -7,6 +7,7 @@ import Spaces from '@availity/spaces';
 import PageHeader from '@availity/page-header';
 import qs from 'query-string';
 import Report from './components/Report';
+import Footer from './components/Footer';
 
 const getQueryString = pathname => pathname.substring(pathname.lastIndexOf('?'), pathname.length);
 
@@ -73,6 +74,7 @@ export default () => {
         {providerId && (
           <Report />
         )}
+        <Footer />
       </Container>
     </Spaces>
   );

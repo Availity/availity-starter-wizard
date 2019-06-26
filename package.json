@@ -35,6 +35,7 @@
     "@availity/api-core": "^5.2.1",
     "@availity/breadcrumbs": "^3.0.1",
     "@availity/env-var": "^1.6.0",
+    "@availity/link": "^1.2.1",
     "@availity/list-group": "^1.1.6",
     "@availity/list-group-item": "^1.1.6",
     "@availity/localstorage-core": "^2.5.0",
