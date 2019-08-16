@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { AvForm } from 'availity-reactstrap-validation';
-import { AvSelectField } from '@availity/reactstrap-validation-select';
-import { AvOrganizationSelect, AvProviderSelect } from '@availity/reactstrap-validation-select/resources';
+import { Form } from '@availity/form';
+import { SelectField } from '@availity/select';
+import { AvOrganizationSelect, AvProviderSelect } from '@availity/select/resources';
 import Spaces from '@availity/spaces';
 import PageHeader from '@availity/page-header';
 import qs from 'query-string';
@@ -27,10 +27,16 @@ export default () => {
             modal: true,
           }}
         />
-        <AvForm>
+        <Form
+          initialValues={{
+            product: '',
+            organization: '',
+            provider: '',
+          }}
+        >
           <Row>
             <Col xs={4}>
-              <AvSelectField
+              <SelectField
                 label={
                   <>
                     <span className="text-primary">Step 1 -</span> Choose Product
@@ -70,10 +76,8 @@ export default () => {
               />
             </Col>
           </Row>
-        </AvForm>
-        {providerId && (
-          <Report />
-        )}
+        </Form>
+        {providerId && <Report />}
         <Footer />
       </Container>
     </Spaces>
