@@ -5,7 +5,4 @@ import 'react-block-ui/style.css';
 import './index.scss';
 import App from './App';
 
-render(
-    <App  />,
-  document.querySelector('#root')
-);
+render(<App />, document.querySelector('#root'));

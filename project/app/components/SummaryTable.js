@@ -67,28 +67,26 @@ const Row = ({ type, description, potential, max, gaps, openGaps, closedGaps }) 
   </tr>
 );
 
-export default () => {
-  return (
-    <Col xs={12} lg={8}>
-      <Table size="small" striped>
-        <thead>
-          <tr>
-            <th>Gap Type</th>
-            <th>Gap Description</th>
-            <th>Potentially Earned</th>
-            <th>Max Earning Potential</th>
-            <th>Eligible Gaps</th>
-            <th># Gaps Open</th>
-            <th># Gaps Closed</th>
-          </tr>
-        </thead>
+export default () => (
+  <Col xs={12} lg={8}>
+    <Table size="small" striped>
+      <thead>
+        <tr>
+          <th>Gap Type</th>
+          <th>Gap Description</th>
+          <th>Potentially Earned</th>
+          <th>Max Earning Potential</th>
+          <th>Eligible Gaps</th>
+          <th># Gaps Open</th>
+          <th># Gaps Closed</th>
+        </tr>
+      </thead>
 
-        <tbody>
-          {rows.map(data => (
-            <Row key={data.id} {...data} />
-          ))}
-        </tbody>
-      </Table>
-    </Col>
-  );
-};
+      <tbody>
+        {rows.map(data => (
+          <Row key={data.id} {...data} />
+        ))}
+      </tbody>
+    </Table>
+  </Col>
+);
