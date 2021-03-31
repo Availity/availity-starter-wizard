@@ -76,9 +76,7 @@
     "cross-env": "^5.1.4",
     "jest-dom": "^3.0.0"
   },
-  "availityWorkflow": {
-    "plugin": "@availity/workflow-plugin-react"
-  },
+  "availityWorkflow": true,
   "lint-staged": {
     "*.js": [
       "prettier --write",
