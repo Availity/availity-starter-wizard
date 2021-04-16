@@ -41,15 +41,15 @@
     "@availity/list-group": "^1.1.6",
     "@availity/list-group-item": "^1.1.6",
     "@availity/localstorage-core": "^2.5.0",
-    "@availity/page-header": "^4.4.6",
+    "@availity/page-header": "^10.0.79",
     "@availity/reactstrap-validation-date": "^1.7.10",
     "@availity/reactstrap-validation-select": "^4.0.1",
     "@availity/select": "^0.3.2",
-    "@availity/spaces": "^2.0.1",
+    "@availity/spaces": "^4.0.30",
     "@availity/step-wizard": "^1.2.2",
-    "@availity/yup": "^1.1.0",
+    "@availity/yup": "^3.0.8",
     "availity-uikit": "^3.0.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "chart.js": "^2.8.0",
     "classnames": "^2.2.6",
     "formik": "^2.0.1-rc.12",
@@ -70,15 +70,16 @@
     "yup": "^0.27.0"
   },
   "devDependencies": {
-    "@availity/workflow": "^5.3.4",
-    "@availity/workflow-plugin-react": "^5.3.4",
+    "@availity/workflow": "^8.5.0",
     "@testing-library/react": "^8.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.3.0",
+    "@typescript-eslint/parser": "^4.3.0",
     "cross-env": "^5.1.4",
-    "jest-dom": "^3.0.0"
+    "eslint-config-availity": "^7.0.251",
+    "jest-dom": "^3.0.0",
+    "typescript": "^4.0.3"
   },
-  "availityWorkflow": {
-    "plugin": "@availity/workflow-plugin-react"
-  },
+  "availityWorkflow": true,
   "lint-staged": {
     "*.js": [
       "prettier --write",
