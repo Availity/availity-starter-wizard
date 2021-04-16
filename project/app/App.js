@@ -6,7 +6,7 @@ import PageHeader from '@availity/page-header';
 import qs from 'query-string';
 import { Report, Footer, ScorecardWizard, ProviderForm } from './components';
 
-const getQueryString = pathname => pathname.substring(pathname.lastIndexOf('?'), pathname.length);
+const getQueryString = (pathname) => pathname.slice(pathname.lastIndexOf('?'), pathname.length);
 
 export default () => {
   const { spaceId } = qs.parse(getQueryString(window.location.href));
